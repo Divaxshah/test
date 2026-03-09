@@ -27,9 +27,11 @@ export default function Navbar() {
     { name: 'Contact', path: '/contact' },
   ];
 
+  const isHome = location.pathname === '/';
+
   return (
     <header
-      className={`fixed top-12 left-0 right-0 w-full z-40 transition-all duration-500 ${
+      className={`fixed left-0 right-0 w-full z-40 transition-all duration-500 ${isHome ? 'top-12' : 'top-0'} ${
         scrolled ? 'bg-[var(--color-paper)]/90 backdrop-blur-md py-4 shadow-sm' : 'bg-transparent py-6'
       }`}
     >
