@@ -4,11 +4,19 @@
  */
 
 import { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Lenis from 'lenis';
 import 'lenis/dist/lenis.css';
 
 import Layout from './components/Layout';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
 import Home from './pages/Home';
 import Destinations from './pages/Destinations';
 import DestinationDetail from './pages/DestinationDetail';
@@ -29,6 +37,7 @@ export default function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <div className="grain-overlay"></div>
       <Routes>
         <Route path="/" element={<Layout />}>

@@ -61,7 +61,7 @@ export default function Home() {
           <motion.p 
             initial={{ opacity: 0, y: 20 }} 
             animate={{ opacity: 1, y: 0 }} 
-            transition={{ duration: 1, delay: 1 }} 
+            transition={{ duration: 0.4, delay: 0.2 }} 
             className="mt-6 md:mt-8 text-sm md:text-base font-light text-[var(--color-ink)]/80 max-w-md text-center leading-relaxed"
           >
             Curating bespoke itineraries and unforgettable journeys for the modern traveler.
@@ -72,7 +72,7 @@ export default function Home() {
         <motion.div
           initial={{ opacity: 0, x: -30, y: 20 }}
           animate={{ opacity: 1, x: 0, y: 0 }}
-          transition={{ duration: 1, delay: 1.2 }}
+          transition={{ duration: 0.4, delay: 0.35 }}
           className="absolute bottom-[10%] md:bottom-[12%] left-[5%] md:left-[8%] z-20 -rotate-6 hidden sm:block"
         >
           <Link to="/destinations" className="bg-[var(--color-forest)] text-[var(--color-paper)] px-6 py-4 md:px-8 md:py-4 uppercase tracking-[0.15em] text-xs font-semibold hover:bg-[var(--color-ink)] transition-colors duration-300 rounded-full shadow-xl flex items-center gap-3 group">
@@ -85,7 +85,7 @@ export default function Home() {
         <motion.div
           initial={{ opacity: 0, x: 30, y: 20 }}
           animate={{ opacity: 1, x: 0, y: 0 }}
-          transition={{ duration: 1, delay: 1.3 }}
+          transition={{ duration: 0.4, delay: 0.45 }}
           className="absolute bottom-[10%] md:bottom-[12%] right-[5%] md:right-[8%] z-20 rotate-3 hidden sm:block"
         >
           <Link to="/contact" className="bg-white/80 backdrop-blur-md border border-[var(--color-forest)]/20 text-[var(--color-forest)] px-6 py-4 md:px-8 md:py-4 uppercase tracking-[0.15em] text-xs font-semibold hover:bg-white transition-colors duration-300 rounded-full shadow-xl flex items-center gap-3 group">
@@ -98,7 +98,7 @@ export default function Home() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1.2 }}
+          transition={{ duration: 0.4, delay: 0.35 }}
           className="absolute bottom-[12%] left-1/2 -translate-x-1/2 z-20 flex sm:hidden flex-col items-center gap-3 w-full px-6"
         >
           <Link to="/destinations" className="bg-[var(--color-forest)] text-[var(--color-paper)] px-8 py-3 uppercase tracking-[0.15em] text-xs font-semibold hover:bg-[var(--color-ink)] transition-colors duration-300 rounded-full w-full text-center">
@@ -113,14 +113,14 @@ export default function Home() {
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 2, duration: 1 }}
+          transition={{ delay: 0.6, duration: 0.4 }}
           className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-10"
         >
           <span className="text-[9px] uppercase tracking-[0.3em] font-semibold text-[var(--color-ink)]/40">Scroll</span>
           <div className="w-[1px] h-10 bg-[var(--color-ink)]/10 relative overflow-hidden">
             <motion.div 
               animate={{ y: [0, 40, 40] }}
-              transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+              transition={{ repeat: Infinity, duration: 1.2, ease: "easeInOut" }}
               className="absolute top-0 left-0 w-full h-1/2 bg-[var(--color-gold)]"
             />
           </div>
@@ -128,7 +128,7 @@ export default function Home() {
 
         {/* Micro Details */}
         <motion.div 
-          initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5, duration: 1 }}
+          initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 0.4 }}
           className="absolute left-10 top-1/2 -translate-y-1/2 -rotate-90 origin-left hidden xl:block z-10"
         >
           <span className="text-[10px] uppercase tracking-[0.4em] text-[var(--color-ink)]/40 font-semibold flex items-center gap-4">
@@ -137,7 +137,7 @@ export default function Home() {
         </motion.div>
 
         <motion.div 
-          initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5, duration: 1 }}
+          initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 0.4 }}
           className="absolute right-10 top-1/2 -translate-y-1/2 rotate-90 origin-right hidden xl:block z-10"
         >
           <span className="text-[10px] uppercase tracking-[0.4em] text-[var(--color-ink)]/40 font-semibold flex items-center gap-4">
