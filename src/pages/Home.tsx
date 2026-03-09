@@ -18,8 +18,8 @@ export default function Home() {
 
   return (
     <div className="bg-[var(--color-paper)] min-h-screen overflow-hidden">
-      {/* Hero Section */}
-      <section ref={heroRef} className="relative h-screen flex items-center justify-center overflow-hidden bg-[var(--color-paper)]">
+      {/* Hero Section — pt-36 reserves space for top banner + navbar and keeps a clear gap */}
+      <section ref={heroRef} className="relative h-screen flex flex-col pt-36 overflow-hidden bg-[var(--color-paper)]">
         {/* Floating Parallax Images */}
         <motion.div 
           style={{ y: y1 }}
@@ -45,10 +45,10 @@ export default function Home() {
           <div className="absolute inset-0 bg-[var(--color-forest)]/10 mix-blend-overlay"></div>
         </motion.div>
 
-        {/* Main Typographic Centerpiece */}
+        {/* Main Typographic Centerpiece — centered in space below header */}
         <motion.div 
           style={{ y: textY, opacity: textOpacity }}
-          className="relative z-10 flex flex-col items-center w-full px-4"
+          className="relative z-10 flex-1 flex flex-col items-center justify-center w-full px-4"
         >
           <h1 
             className="text-[18vw] md:text-[12vw] leading-[0.85] font-serif font-bold text-center uppercase tracking-tighter text-mask drop-shadow-sm"
