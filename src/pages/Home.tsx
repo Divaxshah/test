@@ -18,37 +18,39 @@ export default function Home() {
 
   return (
     <div className="bg-[var(--color-paper)] min-h-screen overflow-hidden">
-      {/* Hero Section — pt-36 reserves space for top banner + navbar and keeps a clear gap */}
-      <section ref={heroRef} className="relative h-screen flex flex-col pt-36 overflow-hidden bg-[var(--color-paper)]">
-        {/* Floating Parallax Images */}
+      {/* Hero Section — less top padding on mobile to reduce gap; full padding on md+ */}
+      <section ref={heroRef} className="relative h-screen flex flex-col pt-24 md:pt-36 overflow-hidden bg-[var(--color-paper)]">
+        {/* Floating Parallax Images — start below header (top-40), z-0 so they stay behind text */}
         <motion.div 
           style={{ y: y1 }}
-          className="absolute top-[12%] left-[2%] lg:left-[5%] w-32 lg:w-48 aspect-[3/4] rounded-t-full overflow-hidden hidden md:block shadow-2xl z-0 -rotate-6"
+          className="absolute top-[22%] md:top-[24%] left-[2%] lg:left-[5%] w-32 lg:w-44 aspect-[3/4] rounded-t-full overflow-hidden hidden md:block shadow-2xl z-0 -rotate-6 pointer-events-none"
         >
           <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?q=80&w=2020&auto=format&fit=crop" alt="Paris" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
           <div className="absolute inset-0 bg-[var(--color-forest)]/10 mix-blend-overlay"></div>
         </motion.div>
 
+        {/* Right: circle — lower and spaced so it doesn’t overlap mountain */}
         <motion.div 
           style={{ y: y2 }}
-          className="absolute bottom-[35%] right-[2%] lg:right-[6%] w-28 lg:w-40 aspect-square rounded-full overflow-hidden hidden md:block shadow-2xl z-0 rotate-3"
+          className="absolute bottom-[32%] md:bottom-[36%] right-[3%] lg:right-[8%] w-24 lg:w-32 aspect-square rounded-full overflow-hidden hidden md:block shadow-2xl z-0 rotate-3 pointer-events-none"
         >
           <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop" alt="Nature" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
           <div className="absolute inset-0 bg-[var(--color-forest)]/10 mix-blend-overlay"></div>
         </motion.div>
 
+        {/* Right: mountain — higher and further right to avoid overlapping circle */}
         <motion.div 
           style={{ y: y3 }}
-          className="absolute top-[12%] right-[4%] lg:right-[8%] w-20 lg:w-28 aspect-[2/3] rounded-b-full overflow-hidden hidden lg:block shadow-xl z-0 rotate-12"
+          className="absolute top-[20%] md:top-[22%] right-[2%] lg:right-[14%] w-20 lg:w-24 aspect-[2/3] rounded-b-full overflow-hidden hidden lg:block shadow-xl z-0 rotate-12 pointer-events-none"
         >
           <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop" alt="Mountains" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
           <div className="absolute inset-0 bg-[var(--color-forest)]/10 mix-blend-overlay"></div>
         </motion.div>
 
-        {/* Main Typographic Centerpiece — centered in space below header */}
+        {/* Main Typographic Centerpiece — z-20 above images; larger pb on md+ for gap above buttons */}
         <motion.div 
           style={{ y: textY, opacity: textOpacity }}
-          className="relative z-10 flex-1 flex flex-col items-center justify-center w-full px-4"
+          className="relative z-20 flex-1 flex flex-col items-center justify-center w-full px-4 pb-16 md:pb-32"
         >
           <h1 
             className="text-[18vw] md:text-[12vw] leading-[0.85] font-serif font-bold text-center uppercase tracking-tighter text-mask drop-shadow-sm"
@@ -68,12 +70,12 @@ export default function Home() {
           </motion.p>
         </motion.div>
 
-        {/* Left Creative CTA */}
+        {/* Left Creative CTA — lower on laptop for clear gap from hero text */}
         <motion.div
           initial={{ opacity: 0, x: -30, y: 20 }}
           animate={{ opacity: 1, x: 0, y: 0 }}
           transition={{ duration: 0.4, delay: 0.35 }}
-          className="absolute bottom-[10%] md:bottom-[12%] left-[5%] md:left-[8%] z-20 -rotate-6 hidden sm:block"
+          className="absolute bottom-[8%] md:bottom-[6%] left-[5%] md:left-[8%] z-20 -rotate-6 hidden sm:block"
         >
           <Link to="/destinations" className="bg-[var(--color-forest)] text-[var(--color-paper)] px-6 py-4 md:px-8 md:py-4 uppercase tracking-[0.15em] text-xs font-semibold hover:bg-[var(--color-ink)] transition-colors duration-300 rounded-full shadow-xl flex items-center gap-3 group">
             View Destinations
@@ -81,12 +83,12 @@ export default function Home() {
           </Link>
         </motion.div>
 
-        {/* Right Creative CTA */}
+        {/* Right Creative CTA — lower on laptop for clear gap from hero text */}
         <motion.div
           initial={{ opacity: 0, x: 30, y: 20 }}
           animate={{ opacity: 1, x: 0, y: 0 }}
           transition={{ duration: 0.4, delay: 0.45 }}
-          className="absolute bottom-[10%] md:bottom-[12%] right-[5%] md:right-[8%] z-20 rotate-3 hidden sm:block"
+          className="absolute bottom-[8%] md:bottom-[6%] right-[5%] md:right-[8%] z-20 rotate-3 hidden sm:block"
         >
           <Link to="/contact" className="bg-white/80 backdrop-blur-md border border-[var(--color-forest)]/20 text-[var(--color-forest)] px-6 py-4 md:px-8 md:py-4 uppercase tracking-[0.15em] text-xs font-semibold hover:bg-white transition-colors duration-300 rounded-full shadow-xl flex items-center gap-3 group">
             Start Planning
@@ -99,7 +101,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.35 }}
-          className="absolute bottom-[12%] left-1/2 -translate-x-1/2 z-20 flex sm:hidden flex-col items-center gap-3 w-full px-6"
+          className="absolute bottom-[10%] left-1/2 -translate-x-1/2 z-20 flex sm:hidden flex-col items-center gap-3 w-full px-6"
         >
           <Link to="/destinations" className="bg-[var(--color-forest)] text-[var(--color-paper)] px-8 py-3 uppercase tracking-[0.15em] text-xs font-semibold hover:bg-[var(--color-ink)] transition-colors duration-300 rounded-full w-full text-center">
             View Destinations
@@ -109,10 +111,10 @@ export default function Home() {
           </Link>
         </motion.div>
 
-        {/* Micro Details */}
+        {/* Micro Details — z-[5] so below hero text, above parallax images */}
         <motion.div 
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 0.4 }}
-          className="absolute left-10 top-1/2 -translate-y-1/2 -rotate-90 origin-left hidden xl:block z-10"
+          className="absolute left-10 top-1/2 -translate-y-1/2 -rotate-90 origin-left hidden xl:block z-[5] pointer-events-none"
         >
           <span className="text-[10px] uppercase tracking-[0.4em] text-[var(--color-ink)]/40 font-semibold flex items-center gap-4">
             Est. 2014 <span className="w-8 h-[1px] bg-[var(--color-ink)]/20 inline-block"></span> Premium Experiences
@@ -121,7 +123,7 @@ export default function Home() {
 
         <motion.div 
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 0.4 }}
-          className="absolute right-10 top-1/2 -translate-y-1/2 rotate-90 origin-right hidden xl:block z-10"
+          className="absolute right-10 top-1/2 -translate-y-1/2 rotate-90 origin-right hidden xl:block z-[5] pointer-events-none"
         >
           <span className="text-[10px] uppercase tracking-[0.4em] text-[var(--color-ink)]/40 font-semibold flex items-center gap-4">
             Global Destinations <span className="w-8 h-[1px] bg-[var(--color-ink)]/20 inline-block"></span> Worldwide
