@@ -109,23 +109,6 @@ export default function Home() {
           </Link>
         </motion.div>
 
-        {/* Scroll Indicator */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6, duration: 0.4 }}
-          className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-10"
-        >
-          <span className="text-[9px] uppercase tracking-[0.3em] font-semibold text-[var(--color-ink)]/40">Scroll</span>
-          <div className="w-[1px] h-10 bg-[var(--color-ink)]/10 relative overflow-hidden">
-            <motion.div 
-              animate={{ y: [0, 40, 40] }}
-              transition={{ repeat: Infinity, duration: 1.2, ease: "easeInOut" }}
-              className="absolute top-0 left-0 w-full h-1/2 bg-[var(--color-gold)]"
-            />
-          </div>
-        </motion.div>
-
         {/* Micro Details */}
         <motion.div 
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 0.4 }}
